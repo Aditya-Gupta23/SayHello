@@ -1,8 +1,8 @@
 
 const ChatPage = () => {
   return (
-    <div>
-      
+    <div style={{color:"white"}}>
+      chat
     </div>
   )
 }
