@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { ShipWheelIcon } from "lucide-react";
 import { Link } from "react-router";
-
+import {useQueryClient, useMutation} from "@tanstack/react-query";
+import {axiosInstance} from '../lib/axios' 
 
 const SignupPage = () => {
+
+  const queryClient = useQueryClient();
 
   const [signupData, setSignupData] = useState({
     fullName: "",
@@ -11,9 +14,17 @@ const SignupPage = () => {
     password: "",
   });
 
+  const { mutate, isPending, error } = useMutation({
+    mutationFn: async (signupData) => {
+      const response = await axiosInstance.post('/auth/signup', signupData);
+      return response.data;
+    },
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["authUser"] })
+  })
+
   const handleSignup = (e) => {
     e.preventDefault();
-    // signupMutation(signupData);
+    mutate(signupData)
   };
 
   return (
@@ -108,14 +119,14 @@ const SignupPage = () => {
                 </div>
 
                 <button className="btn btn-primary w-full" type="submit">
-                  {/* {isPending ? (
+                   {isPending ? (
                     <>
                       <span className="loading loading-spinner loading-xs"></span>
                       Loading...
                     </>
                   ) : (
                     "Create Account"
-                  )} */}
+                  )} 
                 </button>
 
                 <div className="text-center mt-4">
