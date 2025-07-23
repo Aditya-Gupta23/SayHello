@@ -20,6 +20,10 @@ const userSchema=new mongoose.Schema({
         type:String,
         default:""
     },
+    profilePic: {
+      type: String,
+      default: "",
+    },
     nativeLanguge:{
         type:String,
         default:""
@@ -30,7 +34,7 @@ const userSchema=new mongoose.Schema({
     },
     isOnboarded:{
         type:Boolean,
-        default:true
+        default:false
     },
     friends:[{
         type:mongoose.Schema.Types.ObjectId,
