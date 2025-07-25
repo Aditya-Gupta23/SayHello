@@ -20,7 +20,44 @@ export const completeOnboarding=async(userData)=>{
     return response.data;
 }
 
+
 export const logout=async()=>{
     const res=axiosInstance.post('/auth/logout')
+    return res.data;
+}
+
+export const getUserFriends = async () => {
+    try {
+        const res = await axiosInstance.get('/users/friends');
+        return res.data || [];
+    } catch (error) {
+        console.error("Error fetching friends", error);
+        return [];
+    }
+}
+
+export const getRecommendedUsers = async () => {
+    try {
+        const res = await axiosInstance.get('/users');
+        return res.data || [];
+    } catch (error) {
+        console.error("Error fetching recommended users", error);
+        return [];
+    }
+}
+
+export const getOutgoingFriendsReq = async () => {
+    try {
+        // Fixed endpoint typo here
+        const res = await axiosInstance.get('/users/outgoin-friend-requests');
+        return res.data || [];
+    } catch (error) {
+        console.error("Error fetching outgoing friend requests", error);
+        return [];
+    }
+}
+
+export const sendFriendRequests=async(userId)=>{
+    const res=axiosInstance.post(`/users/friend-request/${userId}`)
     return res.data;
 }
