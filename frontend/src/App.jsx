@@ -11,6 +11,7 @@ import PageLoader from './components/PageLoader.jsx'
 import userAuthUser from "./hooks/useAuthUser.jsx"
 import Layout from './components/Layout.jsx'
 import { useThemeStore } from './store/useThemeStore.js'
+import FriendsPage from './pages/FriendsPage.jsx'
 
 const App = () => {
 
@@ -28,6 +29,9 @@ const App = () => {
           <Route path='/signup' element={!isAuthenticated?<SignupPage/>:<Navigate to={isOnboarded?'/':'/onboarding'}/>} />
           <Route path='/login' element={!isAuthenticated?<LoginPage/>:<Navigate to={isOnboarded?'/':'/onboarding'}/>} />
           <Route path='/notifications' element={(isAuthenticated && isOnboarded)?(<Layout showSidebar={true}><NotificationsPage/></Layout>):(<Navigate to={isAuthenticated?'/onboarding':'/login'}/>)}  />
+
+          <Route path='/friends' element={(isAuthenticated&&isOnboarded)?(<Layout showSidebar={true}><FriendsPage/></Layout>):(<Navigate to={isAuthenticated?'/onboardeding':'/login'}/>)} />
+
           <Route path='/chat/:id' element={(isAuthenticated&&isOnboarded)?(<Layout showSidebar={false}><ChatPage/></Layout>):(<Navigate to={isAuthenticated?'/onboarding':'/login'}/> )} />
           <Route path='/call/:id' element={(isAuthenticated&&isOnboarded)?(<CallPage/>):(<Navigate to={isAuthenticated?'/onboardeding':'/login'}/>)} />
           {/* <Route path='/onboarding' element={<OnboardingPage/>} /> */}
