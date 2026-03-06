@@ -1,19 +1,19 @@
 # SayHello
 
-SayHello is a **MERN**-stack real-time chat application that lets users create an account, send/accept friend requests, chat in one‑to‑one conversations, and start video calls (powered by Streamify/WebRTC). [page:1]
+SayHello is a **MERN**-stack real-time chat application that lets users create an account, send/accept friend requests, chat in one‑to‑one conversations, and start video calls (powered by Streamify/WebRTC).
 
 ---
 
 ## Features
 
-- User authentication (signup, login, logout) with JWT sessions. [page:1]
-- User profiles with avatar and basic info. [page:1]
-- Send, accept, and reject friend requests. [page:1]
-- Real-time one‑to‑one text chat using WebSockets/Socket.io. [page:1]
-- Online/offline status indicators for friends. [page:1]
-- Video calling between friends using Streamify/WebRTC. [page:1]
-- Responsive UI built with React, Tailwind CSS, and Vite. [page:1]
-- RESTful APIs with Express and MongoDB on the backend. [page:0]
+- User authentication (signup, login, logout) with JWT sessions. 
+- User profiles with avatar and basic info.
+- Send, accept, and reject friend requests.
+- Real-time one‑to‑one text chat using WebSockets/Socket.io.
+- Online/offline status indicators for friends.
+- Video calling between friends using Streamify/WebRTC.
+- Responsive UI built with React, Tailwind CSS, and Vite.
+- RESTful APIs with Express and MongoDB on the backend. 
 
 ---
 
@@ -21,18 +21,18 @@ SayHello is a **MERN**-stack real-time chat application that lets users create a
 
 ### Frontend
 
-- React (Vite + React template). [page:2]
-- Vite build tool and dev server. [page:2]
-- Tailwind CSS for styling. [page:2]
-- Axios/Fetch for API calls to the backend. [page:2]
+- React (Vite + React template).
+- Vite build tool and dev server.
+- Tailwind CSS for styling.
+- Axios/Fetch for API calls to the backend.
 
 ### Backend
 
-- Node.js and Express.js for REST APIs and WebSocket setup. [page:1]
-- MongoDB with Mongoose for data modelling (users, chats, friend requests, calls). [page:1]
-- JWT for authentication and route protection. [page:1]
-- Socket.io (or similar) for real-time messaging. [page:1]
-- Streamify/WebRTC integration for video calls. [page:1]
+- Node.js and Express.js for REST APIs and WebSocket setup.
+- MongoDB with Mongoose for data modelling (users, chats, friend requests, calls).
+- JWT for authentication and route protection.
+- Socket.io (or similar) for real-time messaging.
+- Streamify/WebRTC integration for video calls.
 
 ---
 
